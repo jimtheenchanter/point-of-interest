@@ -1,0 +1,4 @@
+Point of Interest Web API.
+===================================================================
+Users can register then view + create points of interest for bars and restaurants that do nice food complimented with good music.
+
