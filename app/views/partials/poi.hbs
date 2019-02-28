@@ -1,0 +1,47 @@
+<section class="ui raised segment">
+    <div class="ui grid ">
+        <div class="ui form six wide column">
+            <div class="ui stacked segment">
+                <form action="/poi" method="POST">
+                    <input type="hidden" name="userid" value="312q45">
+                    <div class="field">
+                        <label>Venue Name</label>
+                        <input type="text" name="name" >
+                    </div>
+                    <div class="ui dropdown" name="description">
+                        <!--<input type="hidden" name="description">-->
+                        <div class="text">Describe the Music & Food at your POI</div>
+                        <i class="ui dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item"><i class="frown icon"></i>Yokky!</div>
+                            <div class="item"><i class="meh icon"></i>Meh</div>
+                            <div class="item"><i class="smile icon"></i>Mmmm-hmm!</div>
+                            <div class="item"><i class="heart icon"></i>Je t'aime!</div>
+
+                        </div>
+                    </div>
+                    <!--<div class="grouped inline fields">-->
+                        <!--<div class="field">-->
+                            <!--<div class="ui radio checkbox">-->
+                                <!--<input type="radio" name="method" value="food">-->
+                                <!--<label>Food + Drink</label>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="field">-->
+                            <!--<div class="ui radio checkbox">-->
+                                <!--<input type="radio" name="method" value="direct">-->
+                                <!--<label>Drink</label>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="ui button">
+                    <button class="ui blue submit button">Create POI</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <aside class="six wide column">
+            <img src="images/bridge-red.jpg" class="ui medium image">
+        </aside>
+    </div>
+</section>
