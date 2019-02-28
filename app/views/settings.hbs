@@ -8,28 +8,28 @@
                     <h3 class="ui header">Update your details, {{user.firstName}} {{user.lastName}} </h3>
                     <div class="two fields">
                         <div class="field">
-                            <label>First Name</label>
-                            <input value="" type="text" name="firstName">
+                            <label for="firstName">First Name</label>
+                            <input id="firstName" type="text" name="firstName">
                         </div>
                         <div class="field">
-                            <label>Last Name</label>
-                            <input value="" type="text" name="lastName">
+                            <label for="lastName">Last Name</label>
+                            <input id="lastName" type="text" name="lastName">
                         </div>
                     </div>
                     <div class="field">
-                        <label>Email</label>
-                        <input value="{{user.email}}" type="text" name="email">
+                        <label for="email">Email</label>
+                        <input id="email" value="{{user.email}}" type="text" name="email">
                     </div>
                     <div class="field">
-                        <label>Password</label>
-                        <input value="{{user.password}}" type="password" name="password">
+                        <label  for="password">Password</label>
+                        <input id="password" value="{{user.password}}" type="password" name="password">
                     </div>
                     <button class="ui blue submit button">Save</button>
                 </form>
             </div>
         </div>
         <aside class="ui five wide column">
-            <img src="images/bridge-red.jpg" class="ui medium image">
+            <img src="/public/images/bridge-red.jpg" class="ui medium image">
         </aside>
     </div>
 </section>
