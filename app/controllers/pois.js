@@ -14,7 +14,7 @@ const Pois = {
             try {
                 const pois = await Poi.find().populate('creator');
                 return h.view('report', {
-                    title: 'POIs ',
+                    title: 'POIs',
                     pois: pois
                 });
             } catch (err) {
@@ -31,11 +31,8 @@ const Pois = {
                 const user = await User.findById(id);
                 const data = request.payload;
                 const newPoi = new Poi({
-                    name: data.String,
-                    description: data.String,
-                    // category: data.String,
-                    // location: data.String,
-                    // image: String,
+                    name: data.name,
+                    description: data.description,
                     // creator: {
                     //     type: Schema.Types.ObjectId,
                     //     ref: 'User'

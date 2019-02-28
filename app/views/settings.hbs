@@ -5,15 +5,15 @@
         <div class="ui ten wide column">
             <div class="ui stacked fluid form segment">
                 <form action="/settings" method="POST">
-                    <h3 class="ui header">Update your details</h3>
+                    <h3 class="ui header">Update your details, {{user.firstName}} {{user.lastName}} </h3>
                     <div class="two fields">
                         <div class="field">
                             <label>First Name</label>
-                            <input value="{{user.firstName}}" type="text" name="firstName">
+                            <input value="" type="text" name="firstName">
                         </div>
                         <div class="field">
                             <label>Last Name</label>
-                            <input value="{{user.lastName}}" type="text" name="lastName">
+                            <input value="" type="text" name="lastName">
                         </div>
                     </div>
                     <div class="field">
