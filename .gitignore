@@ -1,6 +1,7 @@
 .idea
 node_modules
-.env
+//.env
+.env.json
 .data/db*
 */
 !.gitignore
