@@ -2,47 +2,102 @@
     <div class="ui grid ">
         <div class="ui form six wide column">
             <div class="ui stacked segment">
-                <form action="/poi" method="POST">
+                <form action="/poi" method="POST" enctype="multipart/form-data">
                     <!--<input type="hidden" name="userid" value="312q45">-->
                     <div class="field">
                         <label>Venue Name</label>
-                        <input type="text" name="name" value="">
+                        <input type="text" name="name" >
                     </div>
-                    <div class="ui dropdown" name="description" >
-                        <input type="hidden" name="description">
-                        <div class="text">Describe the Music & Food at your POI</div>
-                        <i class="ui dropdown icon"></i>
-                        <div class="menu">
-                            <div class="item">Yokky!</div>
-                            <div class="item">Meh</div>
-                            <div class="item">Mmmm-hmm!</div>
-                            <div class="item">Je t'aime!</div>
+
+
+                        <div class="text"></div>
+
+                        <div class="field">
+                            <label>Describe the Music & Food at your POI</label>
+
+                            <input type="text" rows="2" name="description" value>
+                        </div>
+
+
+
+
+            <div class="grouped fields">
+                <label for="category">Category:</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="category" value="bar" checked="" tabindex="0" class="hidden">
+                        <label>Bar</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="category" value="restaurant" tabindex="0" class="hidden">
+                        <label>Restaurant</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="category" value="Coffee Shop" tabindex="0" class="hidden">
+                        <label>Coffee Shop</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="category" value="Nightclub" tabindex="0" class="hidden">
+                        <label>Nightclub</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="category" value="hotel" tabindex="0" class="hidden">
+                        <label>Hotel</label>
+                    </div>
+                </div>
+            </div>
+            <!--</form>-->
+
+            <div class="ui header">Geo Location</div>
+                <div class="ui two fields">
+                    <div class="field">
+                        <div class="ui text box">
+                            <label>Longitude </label>
+                            <input type="text" id="long" name="long" placeholder="00.0" accept="integer/*" >
                         </div>
                     </div>
+
+
+                    <div class="field">
+                        <div class="ui text box">
+                            <label>Latitude </label>
+                            <input type="text" id="lat" name="lat" placeholder="00.0" accept="integer/*" >
+                        </div>
+                </div>
+            </div>
+            <!--<form action="/poi/uploadpicture" method="post" enctype="multipart/form-data">-->
+
                     <!--<div class="grouped inline fields">-->
-                        <!--<div class="field">-->
-                            <!--<div class="ui radio checkbox">-->
-                                <!--<input type="radio" name="method" value="food">-->
-                                <!--<label>Food + Drink</label>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="field">-->
-                            <!--<div class="ui radio checkbox">-->
-                                <!--<input type="radio" name="method" value="direct">-->
-                                <!--<label>Drink</label>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <div class="ui button">
-                    <button class="ui blue submit button">Create POI</button>
-                    </div>
+                                           <!--</div>-->
+                    <input type="file" id="image" name="image" accept="image/*" >
+                    <!--<input type="file" id="image" name="image" value="image" accept="image/*" style="display:none;">-->
+
+
+           </div>
+        </div>
+
+        <aside class="six wide column">
+            <!--<div>-->
+                <!--<button id="upload_widget" class="cloudinary-button">Upload files</button>-->
+            <!--</div>-->
+            <!--<img src="images/bridge-red.jpg" class="ui medium image">-->
+            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-8.065338134765627%2C52.067688721304194%2C-5.771942138671876%2C52.83015063303132&amp;layer=mapnik&amp;marker=52.45056957810956%2C-6.91864013671875" style="border: 1px solid black"></iframe>
+            <br/><small><a href="https://www.openstreetmap.org/?mlat=52.4506&amp;mlon=-6.9186#map=10/52.4506/-6.9186">View Larger Map</a></small>
+            <div class="ui raised fluid segment">
+            <div class="massive ui button">
+                <button class="massive ui blue submit button"><i class = "thumbtack icon "> </i>Create POI</button>
                 </form>
             </div>
-        </div>
-        <aside class="six wide column">
-            <!--<img src="images/bridge-red.jpg" class="ui medium image">-->
-            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-8.065338134765627%2C52.067688721304194%2C-5.771942138671876%2C52.83015063303132&amp;layer=mapnik&amp;marker=52.45056957810956%2C-6.91864013671875" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=52.4506&amp;mlon=-6.9186#map=10/52.4506/-6.9186">View Larger Map</a></small>
 
+            </div>
         </aside>
     </div>
 </section>

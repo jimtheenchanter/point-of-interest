@@ -1,24 +1,32 @@
 <section class="ui raised segment">
     <div class="ui grid">
-        <aside class="six wide column">
-            <img src="images/bridge-red.jpg" class="ui medium image">
-        </aside>
-        <article class="eight wide column">
+
+
+
+        <article class="twelve wide column">
+            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-8.065338134765627%2C52.067688721304194%2C-5.771942138671876%2C52.83015063303132&amp;layer=mapnik&amp;marker=52.45056957810956%2C-6.91864013671875" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=52.4506&amp;mlon=-6.9186#map=10/52.4506/-6.9186">View Larger Map</a></small>
+
             <table class="ui celled table segment">
                 <thead>
                 <tr>
+                    <th>Photo</th>
+                    <th>Thumbnail</th>
                     <th>Name</th>
                     <th>Description</th>
-                   <!-- <th>Category</th>-->
-                    <th>Creator</th>
+                    <th>Coordinates (Long/Lat)</th>
+                    <th>Category</th>
+                    <th>Created By</th>
                 </tr>
                 </thead>
                 <tbody>
                 {{#each pois}}
                     <tr>
+                        <td> {{image}}  </td>
+                        <td> <img src= {{imageURL}} width="50"> </td>
                         <td> {{name}} </td>
                         <td> {{description}} </td>
-                        <!--<td> {{category}} </td>-->
+                        <td> {{long}} {{lat}}</td>
+                        <td> {{category}} </td>
                         <td> {{creator.firstName}} {{creator.lastName}} </td>
                     </tr>
                 {{/each}}

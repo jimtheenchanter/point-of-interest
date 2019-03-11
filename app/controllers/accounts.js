@@ -92,7 +92,7 @@ const Accounts = {
             try {
                 const id = request.auth.credentials.id;
                 const user = await User.findById(id);
-                return h.view('settings', { title: 'Donation Settings', user: user });
+                return h.view('settings', { title: 'POI Settings', user: user });
             } catch (err) {
                 return h.view('login', { errors: [{ message: err.message }] });
             }
@@ -123,9 +123,11 @@ const Accounts = {
         },
         handler: async function(request, h) {
             try {
+                //declares the input from the user as the userEdit..
                 const userEdit = request.payload;
                 const id = request.auth.credentials.id;
                 const user = await User.findById(id);
+                //..then updates the names
                 user.firstName = userEdit.firstName;
                 user.lastName = userEdit.lastName;
                 user.email = userEdit.email;
@@ -137,6 +139,11 @@ const Accounts = {
             }
         }
     },
+
+    options: {
+        abortEarly:false,
+    },
+
     logout: {
         handler: function(request, h) {
             request.cookieAuth.clear();

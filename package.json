@@ -26,6 +26,9 @@
   },
   "homepage": "https://github.com/jimtheenchanter/poi#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "cloudinary": "^1.13.2",
+    "cloudinary-core": "^2.6.2",
     "dotenv": "^6.2.0",
     "handlebars": "^4.1.0",
     "hapi": "^18.1.0",

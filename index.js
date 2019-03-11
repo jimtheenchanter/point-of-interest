@@ -1,4 +1,5 @@
 'use strict';
+
 const dotenv = require('dotenv');
 
 const result = dotenv.config();
@@ -6,12 +7,15 @@ if (result.error) {
     console.log(result.error.message);
     process.exit(1);
 }
+//
 const Hapi = require('hapi');
 
 const server = Hapi.server({
     port: 3000,
     host: 'localhost'
 });
+
+
 
 require('./app/models/db');
 
@@ -43,6 +47,10 @@ async function init() {
     server.auth.default({
         mode: 'required',
         strategy: 'standard'
+    });
+
+    server.bind({
+        cloudinaryCredentials: {}
     });
 
     server.route(require('./routes'));
