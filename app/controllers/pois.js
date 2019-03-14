@@ -56,7 +56,7 @@ const Pois = {
                     long: data.long,
                     lat: data.lat,
                     creator: user._id,
-                    image: picture,
+                    image: picture.image,
                     imageURL: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1551798347/people_with_beards_f8wemo.jpg"
                 });
 
