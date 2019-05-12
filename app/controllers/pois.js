@@ -53,8 +53,13 @@ const Pois = {
                     long: data.long,
                     lat: data.lat,
                     creator: user._id,
+<<<<<<< HEAD
                     imageURL: c_response.url,
                     cloudinary_id: c_response.cloudinary_id
+=======
+                    image: picture.image,
+                    imageURL: "https://res.cloudinary.com/jimtheenchanter/image/upload/v1551798347/people_with_beards_f8wemo.jpg"
+>>>>>>> 65d85c71b97ee7e4c9f96e0affc301553dc0a022
                 });
 
                 await newPoi.save();
