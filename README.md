@@ -14,10 +14,20 @@ https://git.heroku.com/radiant-cove-83127.git
 Github:
 https://github.com/jimtheenchanter/point-of-interest/
 
-Create Pois.
-Upload image not fully working. Data not getting processed
-User can login in/out and update settings.
-Database implemented at mongodb.
+Features:
+Create Point of Interest
+- Name
+- Categories
+- Description
+- Coordinates
+- Photo (upload & delete with Cloudinary)
+- Delete Points of Interest
+- Sign up / Log in Service
+- Admin interface update settings
+
+
+Mongodb Atlas database implemented.
+
 
 
 
