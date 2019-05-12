@@ -10,12 +10,13 @@ const poiSchema = new Schema({
     category: String,
     long: Number,
     lat: Number,
-    image: {data:Buffer, contentType: String  },
+    //image: {data:Buffer, contentType: String  },
     imageURL: String,
     creator: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
+    cloudinary_id:String,
 
 });
 

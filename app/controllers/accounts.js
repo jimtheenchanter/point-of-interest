@@ -99,6 +99,7 @@ const Accounts = {
             }
         }
     },
+    //function for the user to update settings
     updateSettings: {
         validate: {
             payload: {

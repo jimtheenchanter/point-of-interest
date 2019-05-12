@@ -30,7 +30,10 @@ async function init() {
         layoutPath: './app/views/layouts',
         partialsPath: './app/views/partials',
         layout: true,
-        isCached: false
+        isCached: false,
+        allowAbsolutePaths:true,
+        allowInsecureAccess: true
+
     });
 
     server.auth.strategy('standard', 'cookie', {
@@ -51,6 +54,7 @@ async function init() {
     });
 
     server.route(require('./routes'));
+    server.route(require('./routesapi'));
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
 }

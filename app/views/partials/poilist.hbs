@@ -10,24 +10,26 @@
                 <thead>
                 <tr>
                     <th>Photo</th>
-                    <th>Thumbnail</th>
+<!--                    <th>Thumbnail</th>-->
                     <th>Name</th>
                     <th>Description</th>
                     <th>Coordinates (Long/Lat)</th>
                     <th>Category</th>
                     <th>Created By</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 {{#each pois}}
                     <tr>
-                        <td> {{image}}  </td>
-                        <td> <img src= {{imageURL}} width="50"> </td>
+
+                        <td> <img src={{imageURL}} width="100px"> </td>
                         <td> {{name}} </td>
                         <td> {{description}} </td>
-                        <td> {{long}} {{lat}}</td>
+                        <td> {{long}} / {{lat}}</td>
                         <td> {{category}} </td>
                         <td> {{creator.firstName}} {{creator.lastName}} </td>
+                        <td> <a href="/deletepoi/{{id}}" ><button  class="ui submit button">del</button>  </a></td>
                     </tr>
                 {{/each}}
                 </tbody>

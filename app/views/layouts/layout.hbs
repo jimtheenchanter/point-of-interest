@@ -1,17 +1,29 @@
+<!--Layout template served by handlebars-->
+
 <!DOCTYPE html>
 <HTML>
 <head>
     <title>{{title}}</title>
     <meta charset="UTF-8">
+    <!--import jquery library-->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--import semantic library-->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <!--link to semantic stylesheet-->
     <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
 
 </head>
 <body>
+
+
+
+
+
 <section class="ui container">
     {{{content}}}
 </section>
+
+<!-- script to allow dropdown menus -->
 <script>
     $(document).ready(function () {
         $('.ui.dropdown').dropdown({on: 'hover'});
@@ -24,12 +36,7 @@
             .checkbox()
     ;
 
-    // $(function() {
-    //     if($.fn.cloudinary_fileupload !== undefined) {
-    //         $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
-    //     }
-    // });
-</script>
 
+</script>
 </body>
 </html>

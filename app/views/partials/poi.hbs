@@ -2,22 +2,18 @@
     <div class="ui grid ">
         <div class="ui form six wide column">
             <div class="ui stacked segment">
+                <!-- from to allow user to input data and image -->
                 <form action="/poi" method="POST" enctype="multipart/form-data">
-                    <!--<input type="hidden" name="userid" value="312q45">-->
+                    <input type="hidden" name="poi" >
                     <div class="field">
                         <label>Venue Name</label>
                         <input type="text" name="name" >
                     </div>
 
-
-                        <div class="text"></div>
-                        <div class="field">
-                            <label>Describe the Music & Food at your POI</label>
-
-                            <input type="text" rows="2" name="description" value>
-                        </div>
-
-
+                    <div class="field">
+                        <label>Describe the Music & Food at your POI</label>
+                        <input type="text" rows="2" name="description" value>
+                    </div>
 
 
             <div class="grouped fields">
@@ -59,7 +55,7 @@
                     <div class="field">
                         <div class="ui text box">
                             <label>Longitude </label>
-                            <input type="text" id="long" name="long" placeholder="00.0" accept="integer/*" >
+                            <input type="text" id="long" name="long" placeholder="0.000000" accept="integer/*" >
                         </div>
                     </div>
 
@@ -67,36 +63,31 @@
                     <div class="field">
                         <div class="ui text box">
                             <label>Latitude </label>
-                            <input type="text" id="lat" name="lat" placeholder="00.0" accept="integer/*" >
+                            <input type="text" id="lat" name="lat" placeholder="-0.000000" accept="integer/*" >
                         </div>
                     </div>
             </div>
-            <!--<form action="/poi/uploadpicture" method="post" enctype="multipart/form-data">-->
 
-                    <!--<div class="grouped inline fields">-->
-                                           <!--</div>-->
-                    <input type="file" id="image" name="image" accept="image/*" >
-                    <!--<input type="file" id="image" name="image" value="image" accept="image/*" style="display:none;">-->
 
-                    <div class="massive ui button">
-                        <button class="massive ui blue submit button"><i class = "thumbtack icon "> </i>Create POI</button>
+                    <div class="grouped inline fields">
+                                           </div>
+                    <input type="file" id="image" name="image" accept="image/png, image/jpeg" required>
+
+
+                    <div class="ui raised segment">
+                        <button class="medium ui blue submit button"><i class = "thumbtack icon "> </i>Create POI</button>
                     </div>
-                </form>
 
+                </form>
            </div>
         </div>
 
         <aside class="six wide column">
-            <!--<div>-->
-                <!--<button id="upload_widget" class="cloudinary-button">Upload files</button>-->
-            <!--</div>-->
-            <!--<img src="images/bridge-red.jpg" class="ui medium image">-->
-            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-8.065338134765627%2C52.067688721304194%2C-5.771942138671876%2C52.83015063303132&amp;layer=mapnik&amp;marker=52.45056957810956%2C-6.91864013671875" style="border: 1px solid black"></iframe>
-            <br/><small><a href="https://www.openstreetmap.org/?mlat=52.4506&amp;mlon=-6.9186#map=10/52.4506/-6.9186">View Larger Map</a></small>
-            <div class="ui raised fluid segment">
 
 
-            </div>
+<!--            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/#map=13/52.2515/-7.1172" style="border: 1px solid black"></iframe>-->
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=waterford%20ireland&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.crocothemes.net">crocothemes.net</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+
         </aside>
     </div>
 </section>

@@ -1,0 +1,40 @@
+The assignments are designed using 'Constructive Alignment' principles - meaning the grading approach is bound to the learning objectives of the module.
+
+
+
+So, for this assignment, you can think of the spec as have 4 key aspects.
+
+
+(1) api
+
+(2) api tests
+
+(3) new features
+
+(4) front end 
+
+To elaborate:
+
+
+
+(1) Expose features developed in assignment 1 as set of REST endpoints.
+
+
+(2) A comprehensive unit tests for (1)
+
+
+(3) Progressing beyond the assignment 1 features, there are some indications as to the scope of the new features under the 'POI Social' suggestions. I will be happy to review alternative features you might like to pursue..
+
+
+(4) Enhance the UI to showcase the new features - with specific reward for interactive maps.
+ In developing (4) the maximum reward would be to demonstrate Aurelia front end. 
+
+If time is an issue - then you may continue to develop using server rendered approached from assignment 1. However, this will earn a lesser reward. 
+
+This is largely encapsulated in the grading guidlines - along with a few additional aspects.
+
+ 
+
+On Aurelia - I am due to post one more lab on Aurelia Deployment. I will try to get this out over the next day or so. It will be quite short - as it is fairly easy to do.
+
+Hope this helps.
