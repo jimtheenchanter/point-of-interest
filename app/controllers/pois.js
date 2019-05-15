@@ -58,9 +58,9 @@ const Pois = {
                 const data = request.payload; //defines form payloads as data
                 const picture = request.payload.image; //takes in the image field as picture
                 const c_response = await ImageStore.uploadImage(picture); //calls uploadimage function and passes in the image data
-                const newMarker= L.marker([data.lat, data.long]).addTo(map)
-                  .bindPopup(data.name)
-                  .openPopup();
+                // L.marker([data.lat, data.long]).addTo(map)
+                //   .bindPopup(data.name)
+                //   .openPopup();
 
                 const newPoi = new Poi({
                     name: data.name, //data called name received from form
@@ -73,6 +73,7 @@ const Pois = {
                     cloudinary_id: c_response.cloudinary_id,
                     image: picture.image,
                 });
+
 
                 await newPoi.save();
 

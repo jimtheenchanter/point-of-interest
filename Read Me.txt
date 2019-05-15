@@ -1,14 +1,10 @@
-app Point of Interest Web API.
-===================================================================
-Users can register then view + create points of interest for bars and restaurants that do nice food complimented with good music.
-
 Point of Interest Web API.
 ===================================================================
 Users can register then view + create points of interest for bars and restaurants that do nice food complimented with good music.
 
 App deployed to
-https://radiant-cove-83127.herokuapp.com/
-https://git.heroku.com/radiant-cove-83127.git
+https://young-wave-92723.herokuapp.com/ 
+https://git.heroku.com/young-wave-92723.git
 
 Github:
 https://github.com/jimtheenchanter/point-of-interest/
@@ -28,9 +24,3 @@ Create Point of Interest
 Mongodb Atlas database implemented.
 
 
-https://leafletjs.com/reference-1.5.0.html#map-option
-https://wiki.openstreetmap.org/wiki/Marker_API
-
-https://wiki.openstreetmap.org/wiki/OpenLayers_Simple_Example
-
-https://developers.google.com/maps/documentation/javascript/adding-a-google-map
