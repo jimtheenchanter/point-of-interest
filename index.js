@@ -1,7 +1,6 @@
 'use strict';
 
 const dotenv = require('dotenv');
-
 const result = dotenv.config();
 if (result.error) {
     console.log(result.error.message);
@@ -13,6 +12,7 @@ const Hapi = require('hapi');
 const server = Hapi.server({
     port: process.env.PORT || 3000,
 });
+
 
 require('./app/models/db');
 

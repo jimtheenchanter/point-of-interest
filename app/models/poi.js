@@ -10,7 +10,6 @@ const poiSchema = new Schema({
     category: String,
     long: Number,
     lat: Number,
-    //image: {data:Buffer, contentType: String  },
     imageURL: String,
     creator: {
         type: Schema.Types.ObjectId,

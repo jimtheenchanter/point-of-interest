@@ -4,6 +4,8 @@
 const Boom = require('boom');
 const User = require('../models/user');
 const Joi = require('joi');
+const bcrypt = require('bcrypt');   // ADDED to hash passwords
+const saltRounds = 10;      // Speed parameter for salting
 
 const Accounts = {
     index: {
@@ -22,12 +24,14 @@ const Accounts = {
         auth: false,
         validate: {
             payload: {
-                firstName: Joi.string().required(),
-                lastName: Joi.string().required(),
+                firstName: Joi.string().required().regex(/^[A-Z][a-z]{2,}$/),
+                // .regex(/^[A-Z][a-z]{2,}$/)
+                lastName: Joi.string().required().regex(/^[A-Z][a-z]{2,}$/),
+                // .regex(/^[A-Z][a-z]{2,}$/)
                 email: Joi.string()
                     .email()
                     .required(),
-                password: Joi.string().required()
+                password: Joi.string().required().min(8)
             },
             options: {
                 abortEarly: false
@@ -40,6 +44,7 @@ const Accounts = {
                     })
                     .takeover()
                     .code(400);
+
             }
         },
         handler: async function(request, h) {
@@ -50,14 +55,17 @@ const Accounts = {
                     const message = 'Email address is already registered';
                     throw new Boom(message);
                 }
+
+                const hash = await bcrypt.hash(payload.password, saltRounds);
                 const newUser = new User({
                     firstName: payload.firstName,
                     lastName: payload.lastName,
                     email: payload.email,
-                    password: payload.password
+                    password: hash,
                 });
                 user = await newUser.save();
                 request.cookieAuth.set({ id: user.id });
+
                 return h.redirect('/home');
             } catch (err) {
                 return h.view('signup', { errors: [{ message: err.message }] });
@@ -129,11 +137,12 @@ const Accounts = {
                 const userEdit = request.payload;
                 const id = request.auth.credentials.id;
                 const user = await User.findById(id);
+                const hash = await bcrypt.hash(userEdit.password, saltRounds);
                 //..then updates the names
                 user.firstName = userEdit.firstName;
                 user.lastName = userEdit.lastName;
                 user.email = userEdit.email;
-                user.password = userEdit.password;
+                user.password = hash;
                 await user.save();
                 return h.redirect('/home');
             } catch (err) {
