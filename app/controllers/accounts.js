@@ -23,16 +23,23 @@ const Accounts = {
     signup: {
         auth: false,
         validate: {
+            // payload: {
+            //     firstName: Joi.string().required(),
+            //     lastName: Joi.string().required(),
+            //     email: Joi.string()
+            //       .email()
+            //       .required(),
+            //     password: Joi.string().required()
+            // },
             payload: {
-                firstName: Joi.string().required().regex(/^[A-Z][a-z]{2,}$/),
-                // .regex(/^[A-Z][a-z]{2,}$/)
-                lastName: Joi.string().required().regex(/^[A-Z][a-z]{2,}$/),
-                // .regex(/^[A-Z][a-z]{2,}$/)
+                firstName: Joi.string().required().regex(/^[a-zA-Z0-9]*$/).min(3),
+                  // .regex(/^[A-Z][a-z]{2,}$/),
+                lastName: Joi.string().required().regex(/^[a-zA-Z0-9]*$/).min(3),
                 email: Joi.string()
                     .email()
                     .required(),
-                password: Joi.string().required().min(8)
-            },
+                password: Joi.string().required().min(5)},
+
             options: {
                 abortEarly: false
             },
@@ -80,6 +87,26 @@ const Accounts = {
     },
     login: {
         auth: false,
+        validate: {
+            payload: {
+                email: Joi.string()
+                  .email()
+                  .required(),
+                password: Joi.string().required()
+            },
+            options: {
+                abortEarly: false
+            },
+            failAction: function(request, h, error) {
+                return h
+                  .view('login', {
+                      title: 'Sign in error',
+                      errors: error.details
+                  })
+                  .takeover()
+                  .code(400);
+            }
+        },
         handler: async function(request, h) {
             const { email, password } = request.payload;
             try {
@@ -88,14 +115,29 @@ const Accounts = {
                     const message = 'Email address is not registered';
                     throw new Boom(message);
                 }
-                user.comparePassword(password);
-                request.cookieAuth.set({ id: user.id });
-                return h.redirect('/home');
-            } catch (err) {
+
+
+                if (!await user.comparePassword(password)) {         // EDITED (next few lines)
+                    const message = 'Password mismatch';
+                    throw new Boom(message);
+                } else {
+                    request.cookieAuth.set({ id: user.id });
+                    return h.redirect('/home');
+                }
+            }
+            catch (err) {
                 return h.view('login', { errors: [{ message: err.message }] });
             }
         }
     },
+    //             user.comparePassword(password);
+    //             request.cookieAuth.set({ id: user.id });
+    //             return h.redirect('/home');
+    //         } catch (err) {
+    //             return h.view('login', { errors: [{ message: err.message }] });
+    //         }
+    //     }
+    // },
     showSettings: {
         handler: async function(request, h) {
             try {
