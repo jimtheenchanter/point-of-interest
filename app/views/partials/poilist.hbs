@@ -24,7 +24,11 @@
                         <td> {{long}} / {{lat}}</td>
                         <td> {{category}} </td>
                         <td> {{creator.firstName}} {{creator.lastName}} </td>
-                        <td> <a href="/deletepoi/{{id}}" ><button  class="ui submit button">del</button>  </a></td>
+                        <td> {{#if show_delete}}
+                            <a href="/deletepoi/{{id}}" ><button  class="ui submit button">del</button>  </a>
+
+                        {{/if}} </td>
+
                     </tr>
                 {{/each}}
                 </tbody>

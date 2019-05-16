@@ -23,17 +23,9 @@ const Accounts = {
     signup: {
         auth: false,
         validate: {
-            // payload: {
-            //     firstName: Joi.string().required(),
-            //     lastName: Joi.string().required(),
-            //     email: Joi.string()
-            //       .email()
-            //       .required(),
-            //     password: Joi.string().required()
-            // },
+
             payload: {
                 firstName: Joi.string().required().regex(/^[a-zA-Z0-9]*$/).min(3),
-                  // .regex(/^[A-Z][a-z]{2,}$/),
                 lastName: Joi.string().required().regex(/^[a-zA-Z0-9]*$/).min(3),
                 email: Joi.string()
                     .email()
@@ -108,6 +100,7 @@ const Accounts = {
             }
         },
         handler: async function(request, h) {
+
             const { email, password } = request.payload;
             try {
                 let user = await User.findByEmail(email);
@@ -130,14 +123,7 @@ const Accounts = {
             }
         }
     },
-    //             user.comparePassword(password);
-    //             request.cookieAuth.set({ id: user.id });
-    //             return h.redirect('/home');
-    //         } catch (err) {
-    //             return h.view('login', { errors: [{ message: err.message }] });
-    //         }
-    //     }
-    // },
+
     showSettings: {
         handler: async function(request, h) {
             try {
@@ -192,7 +178,6 @@ const Accounts = {
             }
         }
     },
-
     options: {
         abortEarly:false,
     },

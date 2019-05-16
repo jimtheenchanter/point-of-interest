@@ -2,6 +2,8 @@
 
 const dotenv = require('dotenv');
 const result = dotenv.config();
+const utils = require('./app/api/utils.js');
+
 if (result.error) {
     console.log(result.error.message);
     process.exit(1);
@@ -20,6 +22,7 @@ async function init() {
     await server.register(require('inert'));
     await server.register(require('vision'));
     await server.register(require('hapi-auth-cookie'));
+    await server.register(require('hapi-auth-jwt2'));
 
     server.views({
         engines: {
@@ -42,6 +45,12 @@ async function init() {
         isSecure: false,
         ttl: 24 * 60 * 60 * 1000,
         redirectTo: '/'
+    });
+
+    server.auth.strategy('jwt', 'jwt', {
+        key: 'secretpasswordnotrevealedtoanyone',
+        validate: utils.validate,
+        verifyOptions: { algorithms: ['HS256'] },
     });
 
     server.auth.default({

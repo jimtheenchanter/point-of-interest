@@ -1,7 +1,6 @@
 'use strict';
 //controller for Points of Interest Functions
 
-
 const User = require('../models/user');
 const Poi = require('../models/poi');
 //expose functions of imageStore
@@ -20,6 +19,15 @@ const Pois = {
             try {
                 //looks for pois created by users
                 const pois = await Poi.find().populate('creator');
+                const u_id = request.auth.credentials.id;
+                  for(let p in pois){
+                    console.log(pois[p].creator.id)
+                    if(pois[p].creator.id == u_id){
+                        pois[p].show_delete = true;
+                    }else{
+                        pois[p].show_delete = false;
+                    }
+                }
                 return h.view('report', {
                     title: 'POIs',
                     pois: pois,
