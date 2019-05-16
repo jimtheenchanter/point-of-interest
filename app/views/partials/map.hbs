@@ -1,0 +1,44 @@
+<section>
+
+    <div id="mapid"></div>
+    <style>
+        #mapid {
+            height: 400px;
+            width: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        var map = L.map('mapid', {
+            center: [52.249125, -7.118289],
+            zoom: 13
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        //add existing markers to maps
+{{#each pois}}
+        L.marker([{{long}}, {{lat}}]).addTo(map)
+                .bindPopup('<h1>{{name}}</h1><center><img src="{{imageURL}}"></center></br><p><strong>Description:</strong> {{description}}</p><p><strong>Category:</strong> {{category}}</p>')
+                //.openPopup();
+        // L.marker([52.258227, -7.111573]).addTo(map)
+        //         .bindPopup('Kazbar')
+        //         .openPopup();
+        // L.marker([52.262317, -7.11209]).addTo(map)
+        //         .bindPopup('The Granville')
+        //         .openPopup();
+        // L.marker([52.249013, -7.118332]).addTo(map)
+        //         .bindPopup('Hook & Ladder')
+        //         .openPopup();
+        //
+        // L.marker([52.260254, -7.105855]).addTo(map)
+        //         .bindPopup('The Olive Tree')
+        //         .openPopup();
+{{/each}}
+
+
+    </script>
+
+
+</section>

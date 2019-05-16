@@ -1,0 +1,99 @@
+{
+  "poiService": "http://surfacejimbob:3000",
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Lisa",
+      "lastName": "Simpson",
+      "email": "lisa@simpson.com",
+      "password": "secret"
+    }
+  ],
+
+  "pois": [
+    {
+      "name": "Geoff's",
+      "description": "Lovely place with fine gastro delights and admirable audio pleasantries.",
+      "category": "Restaurant",
+      "long": "52.258327",
+      "lat": "-7.111921",
+      "cloudinary_id": "geoffs",
+      "imageURL" : "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557743720/geoffs.jpg",
+      "creator": "->users.lisa"
+    },
+
+    {
+      "name": "Kazbar",
+      "description": "Terrible audio massacre and bland palette peasantries.",
+      "category": "Pub",
+      "long": "52.258227",
+      "lat": "-7.111573",
+      "cloudinary_id": "kazbar",
+      "imageURL" : "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557669623/kazbar.jpg",
+      "creator": "->users.marge"
+    },
+
+    {
+      "name": "The Granville",
+      "description": "Fine, hearty fare with local radio in the background.",
+      "category": "Hotel",
+      "long": "52.262317",
+      "lat": "-7.112090",
+      "cloudinary_id": "granville",
+      "imageURL" : "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557670342/granville.jpg",
+      "creator": "->users.homer"
+    },
+
+    {
+      "name": "Hook & Ladder",
+      "description": "Light and cheerful cuisine with tasty jazzy accompaniment",
+      "category": "Cafe",
+      "long": "52.249125",
+      "lat": "-7.118289",
+      "cloudinary_id": "hook-ladder",
+      "imageURL" : "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557670343/hook-ladder.jpg",
+      "creator": "->users.homer"
+    },
+
+    {
+      "name": "The Olive Tree",
+      "description": "Spanish in feel and Spanish in flavour",
+      "category": "Restaurant",
+      "long": "52.260254",
+      "lat": "-7.105855",
+      "cloudinary_id": "olive-tree",
+      "imageURL" : "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557670343/olive-tree.jpg",
+      "creator": "->users.homer"
+    }
+  ],
+
+  "newPoi": {
+    "name": "The Note Tree",
+    "description": "Hollow",
+    "category": "Restaurant",
+    "long": "51.260254",
+    "lat": "-7.885855",
+    "cloudinary_id": "olive-tree",
+    "imageURL" : "https://res.cloudinary.com/jimtheenchanter/image/upload/v1557670343/olive-tree.jpg",
+    "creator": "->users.homer"
+  },
+
+
+  "newUser":  {
+    "firstName": "Bart",
+    "lastName": "Simpson",
+    "email": "bart@simpson.com",
+    "password": "secret"
+  }
+}

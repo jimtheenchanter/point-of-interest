@@ -50,7 +50,6 @@ const Pois = {
     create: {
         // runs an asynchronous function that returns a page redirect - h
         handler: async function (request, h) {
-
             try {
                 //get the id of the person logged in
                 const id = request.auth.credentials.id;
@@ -58,6 +57,8 @@ const Pois = {
                 const data = request.payload; //defines form payloads as data
                 const picture = request.payload.image; //takes in the image field as picture
                 const c_response = await ImageStore.uploadImage(picture); //calls uploadimage function and passes in the image data
+
+
                 // L.marker([data.lat, data.long]).addTo(map)
                 //   .bindPopup(data.name)
                 //   .openPopup();
@@ -76,7 +77,7 @@ const Pois = {
 
 
                 await newPoi.save();
-
+                // this.marker= marker;
                 return h.redirect('report');
             }
             catch (err) {return h.view('main', {errors: [{message: err.message}]});

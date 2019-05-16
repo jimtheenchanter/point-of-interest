@@ -18,7 +18,13 @@ Create Point of Interest
 - Photo (upload & delete with Cloudinary)
 - Delete Points of Interest
 - Sign up / Log in Service
+- Edit setting Dashboard
 - Admin interface update settings
+- API Endpoints for POI & Users
+- Hashing and salting passwords at signup
+- 
+
+
 
 
 Mongodb Atlas database implemented.

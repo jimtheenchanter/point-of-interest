@@ -1,0 +1,14 @@
+.leaflet-popup-content-wrapper {
+    background-color:lightyellow !important;
+}
+
+.leaflet-popup-content-wrapper h1{
+    text-align: center;
+}
+
+.leaflet-popup-content-wrapper img{
+    max-height:14rem;
+    max-width:18rem;
+    border:.3rem solid black;
+    box-shadow:.3rem .3rem rgba(0,0,0,0.4);
+}

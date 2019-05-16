@@ -29,6 +29,3 @@ db.once('open', function() {
     seed();
 });
 
-// db.getCollection('pois').find({});
-//
-// db.getCollection('pois').delete({});
