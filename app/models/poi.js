@@ -1,6 +1,6 @@
 'use strict';
 
-// const cloudinary = require('cloudinary');
+//what makes up each point of interest
 const Mongoose = require('mongoose');
 const Schema = Mongoose.Schema;
 

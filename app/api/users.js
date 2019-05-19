@@ -74,7 +74,7 @@ const Users = {
 
 
 
-
+//authentication handler for JWToken
 authenticate: {
   auth: false,
     handler: async function(request, h) {
@@ -90,7 +90,6 @@ authenticate: {
     }
   }
 },
-
 
 };
 

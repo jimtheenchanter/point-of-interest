@@ -19,16 +19,8 @@ userSchema.statics.findByEmail = function(email) {
 };
 
 userSchema.methods.comparePassword = async function(userPassword) {
-    // const isMatch = this.password ===  userPassword;
-
-    // }
-    // return this;
-    const isMatch = await bcrypt.compare(userPassword, this.password);
-    // if (!isMatch) {
-    //     throw new Boom('Password mismatch');
-    // }
-    return isMatch;
-
+     const isMatch = await bcrypt.compare(userPassword, this.password);
+     return isMatch;
 };
 
 module.exports = Mongoose.model('User', userSchema);

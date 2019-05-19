@@ -1,3 +1,5 @@
+//controls the database and  seeding.
+
 'use strict';
 
 require('dotenv').config();

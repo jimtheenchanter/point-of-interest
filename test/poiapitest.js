@@ -11,6 +11,7 @@ suite('POI API tests', function() {
 
   const poiService = new PoiService(fixtures.poiService);
 
+
   setup(async function() {
     poiService.deleteAllUsers();
     poiService.deleteAllPois();

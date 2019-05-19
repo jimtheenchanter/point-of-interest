@@ -14,12 +14,16 @@ const Pois = {
             return h.view('home', {title: 'Create a POI'});
         }
     },
+
+    //lists the points of interest
     report: {
         handler: async function (request, h) {
             try {
                 //looks for pois created by users
                 const pois = await Poi.find().populate('creator');
                 const u_id = request.auth.credentials.id;
+
+                //method to only show delete button for current user's POI
                   for(let p in pois){
                     console.log(pois[p].creator.id)
                     if(pois[p].creator.id == u_id){
@@ -38,21 +42,21 @@ const Pois = {
         }
     },
 
-    reportCategory: {
-        handler: async function (request, h) {
-            try {
-                //looks for pois created by users
-                const pois = await Poi.findByCategory().populate('category');
-                return h.view('report', {
-                    title: 'POI by Categories',
-                    pois: pois,
-                });
-
-            } catch (err) {
-                return h.view('main', {errors: [{message: err.message}]});
-            }
-        }
-    },
+    // reportCategory: {
+    //     handler: async function (request, h) {
+    //         try {
+    //             //looks in database for pois created by users
+    //             const pois = await Poi.findByCategory().populate('category');
+    //             return h.view('report', {
+    //                 title: 'POI by Categories',
+    //                 pois: pois,
+    //             });
+    //
+    //         } catch (err) {
+    //             return h.view('main', {errors: [{message: err.message}]});
+    //         }
+    //     }
+    // },
 
 //     //this function allows a user to create a POI of their own
     create: {
@@ -66,11 +70,7 @@ const Pois = {
                 const picture = request.payload.image; //takes in the image field as picture
                 const c_response = await ImageStore.uploadImage(picture); //calls uploadimage function and passes in the image data
 
-
-                // L.marker([data.lat, data.long]).addTo(map)
-                //   .bindPopup(data.name)
-                //   .openPopup();
-
+                //creates the poi from the from payload
                 const newPoi = new Poi({
                     name: data.name, //data called name received from form
                     description: data.description,
@@ -92,7 +92,7 @@ const Pois = {
             }
         }
     },
-
+//deletes the point of interest and also the image from cloudinary
     deletePoi: {
         auth: false,
         handler: async function(request, h) {

@@ -5,21 +5,6 @@ const Poi = require('../models/poi');
 
 const Pois = {
 
-  // findOne: {
-  //   auth: false,
-  //   handler: async function(request, h) {
-  //     try {
-  //       const poi = await Poi.findOne({ _id: request.params.id });
-  //       if (!poi) {
-  //         return Boom.notFound('No Point of Interest with this id');
-  //       }
-  //       return poi;
-  //     } catch (err) {
-  //       return Boom.notFound('No Point of Interest with this id');
-  //     }
-  //   }
-  // },
-
   findByUser: {
     auth: false,
     handler: async function(request, h) {

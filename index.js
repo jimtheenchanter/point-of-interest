@@ -3,6 +3,7 @@
 const dotenv = require('dotenv');
 const result = dotenv.config();
 const utils = require('./app/api/utils.js');
+// const fs = require('fs');
 
 if (result.error) {
     console.log(result.error.message);
@@ -13,6 +14,10 @@ const Hapi = require('hapi');
 
 const server = Hapi.server({
     port: process.env.PORT || 3000,
+    //  tls: {
+    //      key: fs.readFileSync('./private/webserver.key'),
+    //     cert: fs.readFileSync('./private/webserver.crt')
+    // }
 });
 
 
@@ -47,6 +52,7 @@ async function init() {
         redirectTo: '/'
     });
 
+    //jwt strategy
     server.auth.strategy('jwt', 'jwt', {
         key: 'secretpasswordnotrevealedtoanyone',
         validate: utils.validate,

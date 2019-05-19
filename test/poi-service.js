@@ -6,7 +6,7 @@ const axios = require('axios');
 class PoiService {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
-  }
+  };
 
   async getUsers() {
     try {
@@ -15,7 +15,7 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
 
   async getUser(id) {
     try {
@@ -24,7 +24,7 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
 
   async createUser(newUser) {
     try {
@@ -33,7 +33,7 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
 
   async deleteAllUsers() {
     try {
@@ -42,7 +42,7 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
 
   async deleteOneUser(id) {
     try {
@@ -51,7 +51,7 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
 
 
 
@@ -62,7 +62,7 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
 
   async getPois(id) {
     try {
@@ -71,7 +71,7 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
 
   async deleteAllPois() {
     try {
@@ -80,7 +80,16 @@ class PoiService {
     } catch (e) {
       return null;
     }
-  }
+  };
+
+  async authenticate(user) {
+    try {
+      const response = await axios.post('/api/users/authenticate', user);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  };
 }
 
 module.exports = PoiService;

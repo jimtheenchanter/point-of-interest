@@ -1,5 +1,5 @@
 'use strict';
-
+//image functions to upload images from client to cloudinary
 const fs = require('fs');
 const util = require('util');
 require('dotenv').config(); //use to access credentials and secret keys etc
@@ -34,7 +34,6 @@ const ImageStore = {
     let response = {url:"", cloudinary_id:""};
     await writeFile('./public/temp.img', imagefile);
     await cloudinary.uploader.upload('./public/temp.img',function(result){
-      //url = result.url
       console.log(result);
       response.url = result.url;
       response.cloudinary_id = result.public_id;

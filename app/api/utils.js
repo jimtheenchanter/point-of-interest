@@ -1,7 +1,9 @@
+// this is to handle the web token requests
+
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
-
+//validation function for decoded token to check user ID
 exports.validate = async function(decoded, request) {
   const user = await User.findOne({ _id: decoded.id });
   if (!user) {

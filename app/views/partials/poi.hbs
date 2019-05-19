@@ -3,6 +3,7 @@
         <div class="ui form six wide column">
             <div class="ui stacked segment">
                 <!-- from to allow user to input data and image -->
+                <!--   -->
                 <form action="/poi" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="poi" >
                     <div class="field">
@@ -20,19 +21,19 @@
                 <label for="category">Category:</label>
                 <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="category" value="bar" checked="" tabindex="0" class="hidden">
+                        <input type="radio" name="category" value="bar" checked="" tabindex="0" class="hidden" readonly="true">
                         <label>Bar</label>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="category" value="restaurant" tabindex="0" class="hidden">
+                        <input type="radio" name="category" value="restaurant" tabindex="0" class="hidden" readonly="true">
                         <label>Restaurant</label>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui radio checkbox">
-                        <input type="radio" name="category" value="Coffee Shop" tabindex="0" class="hidden">
+                        <input type="radio" name="category" value="Coffee Shop" tabindex="0" class="hidden" readonly="true">
                         <label>Coffee Shop</label>
                     </div>
                 </div>
@@ -55,7 +56,7 @@
                     <div class="field">
                         <div class="ui text box">
                             <label>Longitude </label>
-                            <input type="text" id="long" name="long" placeholder="0.000000" accept="integer/*" >
+                            <input type="text" id="long" name="long" placeholder="0.000000" accept="integer/*" maxlength="8">
                         </div>
                     </div>
 
@@ -63,16 +64,14 @@
                     <div class="field">
                         <div class="ui text box">
                             <label>Latitude </label>
-                            <input type="text" id="lat" name="lat" placeholder="-0.000000" accept="integer/*" >
+                            <input type="text" id="lat" name="lat" placeholder="-0.000000" accept="integer/*" maxlength="8">
                         </div>
                     </div>
             </div>
 
-
                     <div class="grouped inline fields">
                                            </div>
                     <input type="file" id="image" name="image" accept="image/png, image/jpeg" required>
-
 
                     <div class="ui raised segment">
                         <button class="medium ui blue submit button"><i class = "thumbtack icon "> </i>Create POI</button>
