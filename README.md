@@ -1,32 +1,34 @@
-# point-of-interest
-Point of interest API centred around music venues
-===================================================================
-Users can register then view + create points of interest for bars and restaurants that do nice food complimented with good music.
-
 Point of Interest Web API.
 ===================================================================
-Users can register then view + create points of interest for bars and restaurants that do nice food complimented with good music.
+Users can register then view, create & delete Points of Interest for bars and restaurants that do nice food complimented with good music.
 
-App deployed to
-https://radiant-cove-83127.herokuapp.com/
-https://git.heroku.com/radiant-cove-83127.git
+Heroku:
+https://secure-scrubland-19213.herokuapp.com/ 
+https://git.heroku.com/secure-scrubland-19213.git
 
-Github:
+AWS:
+http://34.241.144.150:3000/
+
+Github (Does not contain .env):
 https://github.com/jimtheenchanter/point-of-interest/
 
 Features:
 Create Point of Interest
-- Name
-- Categories
-- Description
-- Coordinates
+- Name, Categories, Description, Coordinates
 - Photo (upload & delete with Cloudinary)
 - Delete Points of Interest
 - Sign up / Log in Service
-- Admin interface update settings
+- Edit settings Dashboard
 
+- API Endpoints for POI & Users
+- Data Seeding at startup
+- Hashing and salting passwords at signup with BCrypt
+- Mongo database on Atlas
 
-Mongodb Atlas database implemented.
+- Deployed to Heroku & AWS
+- Respository on Git (.env file included with Moodle submission)
+- Test API's and AUth token successful with Postman
+- JWT access token authentication
 
 
 

@@ -7,7 +7,7 @@ https://secure-scrubland-19213.herokuapp.com/
 https://git.heroku.com/secure-scrubland-19213.git
 
 AWS:
-http://34.246.185.179:3000/
+http://34.241.144.150:3000/
 
 Github (Does not contain .env):
 https://github.com/jimtheenchanter/point-of-interest/
