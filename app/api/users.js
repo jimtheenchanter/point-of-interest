@@ -7,9 +7,10 @@ const utils = require('./utils.js');
 const Users = {
 
   find: {
-    auth: {
-      strategy: 'jwt',
-    },
+    auth: false,
+    //   {
+    //         strategy: 'jwt',
+    // },
     handler: async function(request, h) {
       const users = await User.find();
       return users;
@@ -17,9 +18,10 @@ const Users = {
   },
 
   findOne: {
-    auth: {
-      strategy: 'jwt',
-    },
+    auth: false,
+    // auth: {
+    //   strategy: 'jwt',
+    // },
     handler: async function(request, h) {
       //try statement to catch incorrect addresses and return a 404
       try {
@@ -36,9 +38,10 @@ const Users = {
   },
 
   create: {
-    auth: {
-      strategy: 'jwt',
-    },
+    auth: false,
+    // auth: {
+    //   strategy: 'jwt',
+    // },
     handler: async function(request, h) {
       const newUser = new User(request.payload);
       const user = await newUser.save();
@@ -50,9 +53,10 @@ const Users = {
   },
 
   deleteAll: {
-    auth: {
-      strategy: 'jwt',
-    },
+    auth: false,
+    // auth: {
+    //   strategy: 'jwt',
+    // },
     handler: async function(request, h) {
       await User.deleteMany({});
       return { success: true };
@@ -60,9 +64,10 @@ const Users = {
   },
 
   deleteOne: {
-    auth: {
-      strategy: 'jwt',
-    },
+    auth: false,
+    // auth: {
+    //   strategy: 'jwt',
+    // },
     handler: async function(request, h) {
       const response = await User.deleteOne({ _id: request.params.id });
       if (response.deletedCount === 1) {

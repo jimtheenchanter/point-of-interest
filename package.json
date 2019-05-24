@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/jimtheenchanter/poi#readme",
   "dependencies": {
-    "axios": "^0.18.0",
     "bcrypt": "^3.0.6",
     "boom": "^7.3.0",
     "cloudinary": "^1.13.2",
@@ -56,7 +55,9 @@
     "printWidth": 120
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "chai": "^4.2.0",
+    "nyc": "^14.1.1",
     "prettier": "^1.16.4"
   }
 }

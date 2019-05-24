@@ -1,7 +1,7 @@
 'use strict';
 
 const axios = require('axios');
-
+const baseUrl = 'http://localhost:3000';
 
 class PoiService {
   constructor(baseUrl) {
@@ -28,7 +28,7 @@ class PoiService {
 
   async createUser(newUser) {
     try {
-      const response = await axios.post(this.baseUrl + '/api/users', newUser);
+      const response = await axios.post(this.baseUrl + 'api/users', newUser);
       return response.data;
     } catch (e) {
       return null;
@@ -55,9 +55,9 @@ class PoiService {
 
 
 
-  async createPoi(id, poi) {
+  async createPoi(poi) {
     try {
-      const response = await axios.post(this.baseUrl + '/api/users/' + id + '/pois', poi);
+      const response = await axios.post(this.baseUrl + '/api/pois', poi);
       return response.data;
     } catch (e) {
       return null;
@@ -66,7 +66,7 @@ class PoiService {
 
   async getPois(id) {
     try {
-      const response = await axios.get(this.baseUrl + '/api/users/' + id + '/pois');
+      const response = await axios.get(this.baseUrl + '/api/pois' + id);
       return response.data;
     } catch (e) {
       return null;
