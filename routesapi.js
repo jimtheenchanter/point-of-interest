@@ -8,6 +8,7 @@ module.exports = [
   { method: 'POST', path: '/api/pois', config: Pois.createPoi },
   { method: 'DELETE', path: '/api/pois/{id}', config: Pois.deleteOne },
   { method: 'DELETE', path: '/api/pois', config: Pois.deleteAll },
+  // { method: 'GET', path: 'api/pois/category', config: Pois.findByCategory},
 
   { method: 'GET', path: '/api/users', config: Users.find },
   { method: 'GET', path: '/api/users/{id}', config: Users.findOne },
@@ -15,6 +16,6 @@ module.exports = [
   { method: 'DELETE', path: '/api/users/{id}', config: Users.deleteOne },
   { method: 'DELETE', path: '/api/users', config: Users.deleteAll },
   { method: 'GET', path: '/api/users/{id}/pois', config: Pois.findByUser },
-  { method: 'GET', path: '/api/pois/{category}', config: Pois.findByCategory },
+  { method: 'GET', path: '/api/pois/{category}/pois', config: Pois.findByCategory },
   { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate }
 ];
